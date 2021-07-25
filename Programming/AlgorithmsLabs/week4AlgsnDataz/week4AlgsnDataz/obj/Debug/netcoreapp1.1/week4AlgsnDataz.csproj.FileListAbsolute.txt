@@ -1,0 +1,10 @@
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\bin\Debug\netcoreapp1.1\week4AlgsnDataz.deps.json
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\bin\Debug\netcoreapp1.1\week4AlgsnDataz.runtimeconfig.json
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\bin\Debug\netcoreapp1.1\week4AlgsnDataz.runtimeconfig.dev.json
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\bin\Debug\netcoreapp1.1\week4AlgsnDataz.dll
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\bin\Debug\netcoreapp1.1\week4AlgsnDataz.pdb
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\obj\Debug\netcoreapp1.1\week4AlgsnDataz.csprojResolveAssemblyReference.cache
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\obj\Debug\netcoreapp1.1\week4AlgsnDataz.csproj.CoreCompileInputs.cache
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\obj\Debug\netcoreapp1.1\week4AlgsnDataz.AssemblyInfo.cs
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\obj\Debug\netcoreapp1.1\week4AlgsnDataz.dll
+c:\users\anubi\source\repos\week4AlgsnDataz\week4AlgsnDataz\obj\Debug\netcoreapp1.1\week4AlgsnDataz.pdb

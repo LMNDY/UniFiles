@@ -1,0 +1,28 @@
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+C:\Users\Graham\Desktop\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+C:\MMU Coursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+C:\MMUCoursework\Algorithms & Data Structures\Week10\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+C:\MMUCoursework\Algorithms & Data Structures\Week11\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb

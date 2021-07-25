@@ -1,0 +1,13 @@
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\bin\Debug\Library sysem using linked lists.exe.config
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\bin\Debug\Library sysem using linked lists.exe
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\bin\Debug\Library sysem using linked lists.pdb
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library sysem using linked lists.csprojResolveAssemblyReference.cache
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library_sysem_using_linked_lists.BookTypeSelectScreen.resources
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library_sysem_using_linked_lists.Properties.Resources.resources
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library sysem using linked lists.csproj.GenerateResource.Cache
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library sysem using linked lists.csproj.CoreCompileInputs.cache
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library sysem using linked lists.exe
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library sysem using linked lists.pdb
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library_sysem_using_linked_lists.FantasyBook.resources
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library_sysem_using_linked_lists.Forms.MainScreen.resources
+C:\Users\anubi\source\repos\Library sysem using linked lists\Library sysem using linked lists\obj\Debug\Library_sysem_using_linked_lists.Forms.BookSearch.resources

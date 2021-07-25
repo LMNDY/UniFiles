@@ -1,0 +1,22 @@
+// Delete code - Not working
+
+            if (!Contains(item))
+            {
+                Console.WriteLine("The item does not exist in the tree");
+            }
+            else if (item.CompareTo(root.Data) < 0)
+            {
+                node = null;
+                RemoveItem(item);
+            }
+            
+            else if (item.CompareTo(root.Data) == null | (item.CompareTo(root.Data) > 0))
+            {
+               root.Left = null;
+            }
+            else if (item.CompareTo(root.Data) > 0 | (item.CompareTo(root.Data) < 0))
+            {
+                if(root.Left == null && root.Right != null)
+            
+                root.Right = null;
+            }

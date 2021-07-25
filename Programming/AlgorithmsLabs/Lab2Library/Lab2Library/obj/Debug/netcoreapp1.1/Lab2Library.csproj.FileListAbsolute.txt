@@ -1,0 +1,10 @@
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\bin\Debug\netcoreapp1.1\Lab2Library.deps.json
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\bin\Debug\netcoreapp1.1\Lab2Library.runtimeconfig.json
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\bin\Debug\netcoreapp1.1\Lab2Library.runtimeconfig.dev.json
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\obj\Debug\netcoreapp1.1\Lab2Library.csprojResolveAssemblyReference.cache
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\obj\Debug\netcoreapp1.1\Lab2Library.csproj.CoreCompileInputs.cache
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\obj\Debug\netcoreapp1.1\Lab2Library.AssemblyInfo.cs
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\bin\Debug\netcoreapp1.1\Lab2Library.dll
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\bin\Debug\netcoreapp1.1\Lab2Library.pdb
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\obj\Debug\netcoreapp1.1\Lab2Library.dll
+C:\Users\anubi\source\repos\Lab2Library\Lab2Library\obj\Debug\netcoreapp1.1\Lab2Library.pdb

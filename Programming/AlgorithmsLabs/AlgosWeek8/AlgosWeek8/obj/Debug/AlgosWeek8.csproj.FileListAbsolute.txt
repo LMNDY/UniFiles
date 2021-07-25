@@ -1,0 +1,7 @@
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\bin\Debug\AlgosWeek8.exe.config
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\bin\Debug\AlgosWeek8.exe
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\bin\Debug\AlgosWeek8.pdb
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\obj\Debug\AlgosWeek8.csprojResolveAssemblyReference.cache
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\obj\Debug\AlgosWeek8.csproj.CoreCompileInputs.cache
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\obj\Debug\AlgosWeek8.exe
+C:\Users\anubi\source\repos\AlgosWeek8\AlgosWeek8\obj\Debug\AlgosWeek8.pdb

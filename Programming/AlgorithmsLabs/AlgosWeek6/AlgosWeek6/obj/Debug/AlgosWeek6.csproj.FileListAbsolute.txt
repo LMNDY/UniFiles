@@ -1,0 +1,10 @@
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\bin\Debug\AlgosWeek6.exe.config
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\bin\Debug\AlgosWeek6.exe
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\bin\Debug\AlgosWeek6.pdb
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.csprojResolveAssemblyReference.cache
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.Form1.resources
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.Properties.Resources.resources
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.csproj.GenerateResource.Cache
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.csproj.CoreCompileInputs.cache
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.exe
+C:\Users\anubi\source\repos\AlgosWeek6\AlgosWeek6\obj\Debug\AlgosWeek6.pdb
