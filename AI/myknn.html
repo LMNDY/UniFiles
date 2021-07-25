@@ -1,0 +1,355 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>myknn</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-11"><meta name="DC.source" content="myknn.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">classdef</span> myknn
+    <span class="keyword">methods</span>(Static)
+
+        <span class="comment">% Summary</span>
+        <span class="comment">%</span>
+        <span class="comment">% Before KNN process is run data is cleaned up using</span>
+        <span class="comment">% Z score standardisation (Think cloud -&gt; sphere).</span>
+        <span class="comment">% This process uses Standard deviation and means to</span>
+        <span class="comment">% shrink the data so that each feature has a comparable size.</span>
+        <span class="comment">% It is done so that no one large data point can</span>
+        <span class="comment">% skew the results meaning that all axes have an equal</span>
+        <span class="comment">% contribution.</span>
+        <span class="comment">%</span>
+        <span class="comment">% KNN plots(Simple, not much processing, always fast) training</span>
+        <span class="comment">% examples as coordiates in feature space (Multidimentional,</span>
+        <span class="comment">% with an axis for each feature).</span>
+
+        <span class="comment">% Each testing example is compaired to every training</span>
+        <span class="comment">% example, the testing example then takes on the most common</span>
+        <span class="comment">% classification of the K(number of) Nearest Neighbours.</span>
+        <span class="comment">% The nearest neighbours are calculated as those with the</span>
+        <span class="comment">% shortest Euclidean distance (Straight Line).</span>
+        <span class="comment">% 50 test, 1000 training with a K of 10(K dosnt effect calculation)</span>
+        <span class="comment">% mean 50,000 calculations must take place, so the larger the</span>
+        <span class="comment">% training data the slower the calculations.</span>
+
+        <span class="comment">% K is the only hyperparameter(set before training), KNN doesnt</span>
+        <span class="comment">% learn any parameters during training. Choosing the correct value</span>
+        <span class="comment">% for k is important as choosing a value to low (Overfitting)or</span>
+        <span class="comment">% high (Underfitting) can yeald poor results. Think low values</span>
+        <span class="comment">% can be classified the same as "noise" in the data when a larger</span>
+        <span class="comment">% value of K will give a more accurate result. A good start is</span>
+        <span class="comment">% for the value of k is the square root of the numebr of items in</span>
+        <span class="comment">% the training data</span>
+
+        <span class="comment">% Fit This is the process that re-scales each feature</span>
+        <span class="comment">% in our training data to lie within comparable ranges.</span>
+        <span class="keyword">function</span> m = fit(train_examples, train_labels, k)
+
+            <span class="comment">% start of standardisation process</span>
+            <span class="comment">% mean works the average of all examples</span>
+			m.mean = mean(train_examples{:,:});
+            <span class="comment">% std works the standard deviation of the examples.</span>
+			m.std = std(train_examples{:,:});
+            <span class="comment">% this process reduces the values for each column by</span>
+            <span class="comment">% making its equal its difference to the mean.</span>
+            <span class="comment">% then each column is then right devided (./) by the standard</span>
+            <span class="comment">% deviation. This whole process is so that the values arn't</span>
+            <span class="comment">% dominated by values of a larger scale.</span>
+            <span class="comment">% this process is called z-score standardisation</span>
+            <span class="keyword">for</span> i=1:size(train_examples,1)
+				train_examples{i,:} = train_examples{i,:} - m.mean;
+                train_examples{i,:} = train_examples{i,:} ./ m.std;
+            <span class="keyword">end</span>
+            <span class="comment">% end of standardisation process</span>
+
+            <span class="comment">% set the values of the correspondent fields</span>
+            m.train_examples = train_examples;
+            m.train_labels = train_labels;
+            m.k = k;
+
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> predictions = predict(m, test_examples)
+
+            predictions = categorical;
+
+            <span class="keyword">for</span> i=1:size(test_examples,1)
+
+                fprintf(<span class="string">'classifying example example %i/%i\n'</span>, i, size(test_examples,1));
+
+                this_test_example = test_examples{i,:};
+
+                <span class="comment">% process of z-score standardisation using values from the</span>
+                <span class="comment">% training data.</span>
+                <span class="comment">% start of standardisation process</span>
+                this_test_example = this_test_example - m.mean;
+                this_test_example = this_test_example ./ m.std;
+                <span class="comment">% end of standardisation process</span>
+
+                <span class="comment">% prediction of each row item this is then added to a new</span>
+                <span class="comment">% array.</span>
+                this_prediction = myknn.predict_one(m, this_test_example);
+                predictions(end+1) = this_prediction;
+
+            <span class="keyword">end</span>
+
+		<span class="keyword">end</span>
+
+        <span class="keyword">function</span> prediction = predict_one(m, this_test_example)
+            <span class="comment">% finds the K training exapmles with the shortest distance and</span>
+            <span class="comment">% then  makes the prediction based on this</span>
+            distances = myknn.calculate_distances(m, this_test_example);
+            neighbour_indices = myknn.find_nn_indices(m, distances);
+            prediction = myknn.make_prediction(m, neighbour_indices);
+
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> distances = calculate_distances(m, this_test_example)
+            <span class="comment">% actual calculation of distances</span>
+			distances = [];
+
+			<span class="keyword">for</span> i=1:size(m.train_examples,1)
+
+				this_training_example = m.train_examples{i,:};
+                this_distance = myknn.calculate_distance(this_training_example, this_test_example);
+                distances(end+1) = this_distance;
+            <span class="keyword">end</span>
+
+		<span class="keyword">end</span>
+
+        <span class="keyword">function</span> distance = calculate_distance(p, q)
+
+            <span class="comment">% Uses pythagorus to work out the difference between each value</span>
+			differences = q - p;
+            squares = differences .^ 2;
+            total = sum(squares);
+            distance = sqrt(total);
+
+		<span class="keyword">end</span>
+
+        <span class="keyword">function</span> neighbour_indices = find_nn_indices(m, distances)
+            <span class="comment">% sorts neighbours by distance</span>
+
+			[sorted, indices] = sort(distances);
+            neighbour_indices = indices(1:m.k);
+
+		<span class="keyword">end</span>
+
+        <span class="keyword">function</span> prediction = make_prediction(m, neighbour_indices)
+            <span class="comment">% takes classification and assigns most common</span>
+			neighbour_labels = m.train_labels(neighbour_indices);
+            prediction = mode(neighbour_labels);
+
+		<span class="keyword">end</span>
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+ans = 
+
+  myknn with no properties.
+
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+classdef myknn
+    methods(Static)
+        
+        % Summary
+        % 
+        % Before KNN process is run data is cleaned up using
+        % Z score standardisation (Think cloud -> sphere).
+        % This process uses Standard deviation and means to 
+        % shrink the data so that each feature has a comparable size.
+        % It is done so that no one large data point can 
+        % skew the results meaning that all axes have an equal 
+        % contribution.
+        %
+        % KNN plots(Simple, not much processing, always fast) training
+        % examples as coordiates in feature space (Multidimentional, 
+        % with an axis for each feature).
+        
+        % Each testing example is compaired to every training  
+        % example, the testing example then takes on the most common 
+        % classification of the K(number of) Nearest Neighbours.         
+        % The nearest neighbours are calculated as those with the 
+        % shortest Euclidean distance (Straight Line).
+        % 50 test, 1000 training with a K of 10(K dosnt effect calculation)
+        % mean 50,000 calculations must take place, so the larger the
+        % training data the slower the calculations.
+        
+        % K is the only hyperparameter(set before training), KNN doesnt 
+        % learn any parameters during training. Choosing the correct value
+        % for k is important as choosing a value to low (Overfitting)or 
+        % high (Underfitting) can yeald poor results. Think low values 
+        % can be classified the same as "noise" in the data when a larger
+        % value of K will give a more accurate result. A good start is 
+        % for the value of k is the square root of the numebr of items in 
+        % the training data
+        
+        % Fit This is the process that re-scales each feature
+        % in our training data to lie within comparable ranges.
+        function m = fit(train_examples, train_labels, k)
+            
+            % start of standardisation process
+            % mean works the average of all examples
+			m.mean = mean(train_examples{:,:});
+            % std works the standard deviation of the examples.
+			m.std = std(train_examples{:,:});
+            % this process reduces the values for each column by 
+            % making its equal its difference to the mean.        
+            % then each column is then right devided (./) by the standard
+            % deviation. This whole process is so that the values arn't
+            % dominated by values of a larger scale.
+            % this process is called z-score standardisation
+            for i=1:size(train_examples,1)
+				train_examples{i,:} = train_examples{i,:} - m.mean;
+                train_examples{i,:} = train_examples{i,:} ./ m.std;
+            end
+            % end of standardisation process
+            
+            % set the values of the correspondent fields
+            m.train_examples = train_examples;
+            m.train_labels = train_labels;
+            m.k = k;
+        
+        end
+
+        function predictions = predict(m, test_examples)
+
+            predictions = categorical;
+
+            for i=1:size(test_examples,1)
+                
+                fprintf('classifying example example %i/%i\n', i, size(test_examples,1));
+                
+                this_test_example = test_examples{i,:};
+                
+                % process of z-score standardisation using values from the
+                % training data.
+                % start of standardisation process
+                this_test_example = this_test_example - m.mean;
+                this_test_example = this_test_example ./ m.std;
+                % end of standardisation process
+                
+                % prediction of each row item this is then added to a new
+                % array. 
+                this_prediction = myknn.predict_one(m, this_test_example);
+                predictions(end+1) = this_prediction;
+            
+            end
+        
+		end
+
+        function prediction = predict_one(m, this_test_example)
+            % finds the K training exapmles with the shortest distance and
+            % then  makes the prediction based on this
+            distances = myknn.calculate_distances(m, this_test_example);
+            neighbour_indices = myknn.find_nn_indices(m, distances);
+            prediction = myknn.make_prediction(m, neighbour_indices);
+        
+        end
+
+        function distances = calculate_distances(m, this_test_example)
+            % actual calculation of distances
+			distances = [];
+            
+			for i=1:size(m.train_examples,1)
+                
+				this_training_example = m.train_examples{i,:};
+                this_distance = myknn.calculate_distance(this_training_example, this_test_example);
+                distances(end+1) = this_distance;
+            end
+        
+		end
+
+        function distance = calculate_distance(p, q)
+            
+            % Uses pythagorus to work out the difference between each value
+			differences = q - p;
+            squares = differences .^ 2;
+            total = sum(squares);
+            distance = sqrt(total);
+        
+		end
+
+        function neighbour_indices = find_nn_indices(m, distances)
+            % sorts neighbours by distance
+            
+			[sorted, indices] = sort(distances);
+            neighbour_indices = indices(1:m.k);
+        
+		end
+        
+        function prediction = make_prediction(m, neighbour_indices)
+            % takes classification and assigns most common
+			neighbour_labels = m.train_labels(neighbour_indices);
+            prediction = mode(neighbour_labels);
+        
+		end
+
+    end
+end
+
+
+##### SOURCE END #####
+--></body></html>
