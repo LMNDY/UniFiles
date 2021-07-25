@@ -1,0 +1,254 @@
+>> foo = 'bar'
+
+foo =
+
+    'bar'
+
+>> foo = 'bar';
+>> num1 = 7
+
+num1 =
+
+     7
+
+>> num2 = 7.0002
+
+num2 =
+
+    7.0002
+
+>> num3 = num1 + num2 
+
+num3 =
+
+   14.0002
+
+>> myarray = [3 7 5 2 1 5 9]
+
+myarray =
+
+     3     7     5     2     1     5     9
+
+>> myarray(4) = 10
+
+myarray =
+
+     3     7     5    10     1     5     9
+
+>> myarray_min = min(myarray)
+
+myarray_min =
+
+     1
+
+>> myarray_max = max(myarray)
+
+myarray_max =
+
+    10
+
+>> myarray_average = mean(myarray)
+
+myarray_average =
+
+    5.7143
+
+>> myarray_total = sum(myarray)
+
+myarray_total =
+
+    40
+
+>> myarray_sorted = sort(myarray)
+
+myarray_sorted =
+
+     1     3     5     5     7     9    10
+
+>> myarray_unique = unique(myarray)
+
+myarray_unique =
+
+     1     3     5     7     9    10
+
+>> help mean
+ mean   Average or mean value.
+    S = mean(X) is the mean value of the elements in X if X is a vector. 
+    For matrices, S is a row vector containing the mean value of each 
+    column. 
+    For N-D arrays, S is the mean value of the elements along the first 
+    array dimension whose size does not equal 1.
+ 
+    mean(X,'all') is the mean of all elements in X.
+ 
+    mean(X,DIM) takes the mean along the dimension DIM of X.
+ 
+    mean(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM. For example, mean(X,[1 2]) operates on the elements contained
+    in the first and second dimensions of X.
+ 
+    S = mean(...,TYPE) specifies the type in which the mean is performed, 
+    and the type of S. Available options are:
+ 
+    'double'    -  S has class double for any input X
+    'native'    -  S has the same class as X
+    'default'   -  If X is floating point, that is double or single,
+                   S has the same class as X. If X is not floating point, 
+                   S has class double.
+ 
+    S = mean(...,NANFLAG) specifies how NaN (Not-A-Number) values are 
+    treated. The default is 'includenan':
+ 
+    'includenan' - the mean of a vector containing NaN values is also NaN.
+    'omitnan'    - the mean of a vector containing NaN values is the mean 
+                   of all its non-NaN elements. If all elements are NaN,
+                   the result is NaN.
+ 
+    Example:
+        X = [1 2 3; 3 3 6; 4 6 8; 4 7 7]
+        mean(X,1)
+        mean(X,2)
+ 
+    Class support for input X:
+       float: double, single
+       integer: uint8, int8, uint16, int16, uint32,
+                int32, uint64, int64
+ 
+    See also median, std, min, max, var, cov, mode.
+
+    Reference page for mean
+    Other functions named mean
+
+>> bar(myarray)
+>> xlabel('Element Number')
+>> ylabel('Value Stored')
+>> 
+>> title('Graph showing the contents of the myarray variable')
+>> hold ('on')
+>> plot(myarray)
+>> sum(myarray)
+
+ans =
+
+    40
+
+>> 7
+
+ans =
+
+     7
+
+>> 2*3
+
+ans =
+
+     6
+
+>> sqrt(4)
+
+ans =
+
+     2
+
+>> [1 5 2 4 3]
+
+ans =
+
+     1     5     2     4     3
+
+>> x=2.5
+
+x =
+
+    2.5000
+
+>>  x = 2.5;
+>> sigam = 1.2;
+>> sigma = 1.2;
+>> mu = 3.1;
+>> first_bit = 1 / sqrt(2*pi*sigma^2)
+
+first_bit =
+
+    0.3325
+
+>> second_bit = - ( ((x-mu)^2) / (2*sigma^2) )
+
+second_bit =
+
+   -0.1250
+
+>> answer = first_bit * exp(second_bit)
+
+answer =
+
+    0.2934
+
+>> normpdf(x,mu,sigma)
+
+ans =
+
+    0.2934
+
+------------------Tasks--------------------------------
+
+>> task_array = [5 4 2 7 12 3 1]
+
+task_array =
+
+     5     4     2     7    12     3     1
+
+>> task_array(1) = 6
+
+task_array =
+
+     6     4     2     7    12     3     1
+
+>> task_array(1) = 6
+
+task_array =
+
+     6     4     2     7    12     3     1
+
+>> task_array(7) = 2
+
+task_array =
+
+     6     4     2     7    12     3     2
+
+>> bar(task_array)
+>> hold ('off')
+>> bar(task_array)
+>> hold ('on')
+>> xlabel('Element Number')
+>> ylabel('Value Stored')
+>> title('Graph showing the contents of the myarray variable')
+>> task_x = 2.5;
+>> task_sigma = 1.1;
+>> task_x = 1.5;
+>> task_mu = 0.8;
+>> first_bit = 1 / sqrt(2*pi*task_sigma^2)
+
+first_bit =
+
+    0.3627
+
+>> second_bit = - ( ((task_x-task_mu)^2) / (2*task_sigma^2) )
+
+second_bit =
+
+   -0.2025
+
+>> answer = first_bit * exp(second_bit)
+
+answer =
+
+    0.2962
+
+>> normpdf(task_x,task_mu,task_sigma)
+
+ans =
+
+    0.2962
+
+>> 
